@@ -1,5 +1,5 @@
 const myCache = require("../cache")
-const petsCollection = require("../db").db().collection("pets")
+const petsCollection = require("../db").db().collection("Pets")
 const { ObjectId } = require("mongodb")
 const cloudinary = require("cloudinary").v2
 const sanitizeHtml = require("sanitize-html")
@@ -77,7 +77,7 @@ exports.actuallyUpdatePet = async (req, res) => {
   if (typeof req.body.name != "string") {
     req.body.name = ""
   }
-  
+
   if (typeof req.body.description != "string") {
     req.body.description = ""
   }
@@ -112,11 +112,11 @@ exports.storePet = async (req, res) => {
   if (typeof req.body.name != "string") {
     req.body.name = ""
   }
-  
+
   if (typeof req.body.description != "string") {
     req.body.description = ""
   }
-  
+
   let ourObject = { name: sanitizeHtml(req.body.name, sanitizeOptions), birthYear: new Date().getFullYear(), species: sanitizeHtml(req.body.species, sanitizeOptions), description: sanitizeHtml(req.body.description, sanitizeOptions) }
 
   if (req.body.birthYear > 999 && req.body.birthYear < 9999) {
