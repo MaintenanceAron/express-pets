@@ -1,5 +1,5 @@
 const myCache = require("../cache")
-const petsCollection = require("../db").db().collection("pets")
+const petsCollection = require("../db").db().collection("Pets")
 const { ObjectId } = require("mongodb")
 const cloudinary = require("cloudinary").v2
 const sanitizeHtml = require("sanitize-html")

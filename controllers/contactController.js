@@ -2,7 +2,7 @@ const validator = require("validator")
 const nodemailer = require("nodemailer")
 const sanitizeHtml = require("sanitize-html")
 const { ObjectId } = require("mongodb")
-const petsCollection = require("../db").db().collection("pets")
+const petsCollection = require("../db").db().collection("Pets")
 const contactsCollection = require("../db").db().collection("contacts")
 
 
